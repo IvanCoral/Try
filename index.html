@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Try</title>
+        <link rel="stylesheet" type="text/css" href="styles/index.css">
+        <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/732/732212.png?w=360" type="image/jpg">
+        <style>
+            .block_image{
+                float: left;
+            }
+        </style>
+
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">
+                <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png?w=360" alt="logo">
+                <h2 class="nombre">Creacion WEB</h2>
+            </a>
+        </header>
+        <div class="menu">
+            <nav class="buttons">
+                <a href="" class="nav-link">Home</a>    
+                <a href="" class="nav-link">Practices</a>  
+                <a href="" class="nav-link">Contact</a>  
+            </nav>    
+        
+
+        </div>    
+        <img class="block_image" src="img/bloques.png">
+
+        <p class="texto">En esta lección y en las lecciones CSS Fuentes (1) y CSS Fuentes (2) se comentan las propiedades CSS definidas en la recomendación CSS Fonts Module Level 3, publicada en septiembre de 2018.
+
+            Estas propiedades permiten elegir con todo detalle el tipo de letra que se mostrará en el navegador del usuario.
+            
+            En esta lección se comentan las propiedades relacionadas con las fuentes web, es decir fuentes que pueden mostrarse en el navegador sin necesidad de estar instaladas en el ordenador ya que se descargan automáticamente.
+            
+            Fuentes WOFF (Web Open Font Format)woff
+            Recomendación W3C Mozilla Developer Network Can I usewoff2
+            Recomendación W3C Mozilla Developer Network Can I use
+            En 2009 se desarrolló un formato de fuentes llamado WOFF (Web Open Font Format) pensado para la web. En realidad no se trata de un nuevo formato, puesto que una fuente WOFF no es más que una fuente TrueType, OpenType, Open Font o SVG comprimida y con metadatos para indicar detalles como el origen de la fuente o la licencia.
+            
+            En abril de 2010, Mozilla, Microsoft y Opera presentaron este formato al W3C, que aprobó la recomendación WOFF File Format 1.0 en diciembre de 2012.
+            
+            En marzo de 2018 se aprobó la recomendación WOFF File Format 2.0. Gracias al nuevo algoritmo de compresión Brotli, esta recomendación consigue reducir el tamaño de las fuentes a la cuarta parte, aumentar la velocidad de descompresión y reducir los requisitos de memoria, como se explica en el WOFF 2.0 Evaluation Report publicado por el W3C en marzo de 2016 o en este artículo en lwn.net sobre WOFF2 (13/11/2013).
+            
+            El formato WOFF 2 es mucho mejor que el formato WOFF 1 y servicios como Google Fonts ya sólo ofrecen WOFF 2.
+            
+            Para crear fuentes WOFF se puede utilizar webs como Font Squirrel en la que subiendo una fuente TTF u OTF podemos descargar la misma fuente en los formatos WOFF2, WOFF, EOT y SVG.
+            
+            La regla arroba @font-face@font-face
+            Recomendación CSS3 Mozilla Developer Network
+            La recomendación CSS Fonts Module Level 3, publicada en septiembre de 2018, permite la utilización de fuentes web mediante el uso de la regla-arroba @font-face, como muestra el ejemplo siguiente:
+            
+            @font-face {
+                font-family: "Mystery Quest";
+                src: url("mystery-quest.woff2");
+            }
+            
+            p {
+                font-family: "Mystery Quest", cursive;
+                font-size: 150%;
+            }
+            
+            Enlace externo
+            En la regla @font-face:
+            
+            La propiedad font-family establece cómo tenemos que llamar a la fuente en la hoja de estilo. Si el nombre contiene espacios en blanco, es necesario escribir el nombre entre comillas.
+            La propiedad src indica el camino (absoluto o relativo) del fichero de la fuente. En el caso de indicar un camino relativo, el camino relativo es el camino relativo de la fuente con respecto a la hoja de estilo, no respecto a la página web.
+            Una vez definido el nombre de la fuente, se puede hacer referencia a ella en las propiedades font-family.
+            
+            La recomendación no impone ningún formato específico para los tipos de letra, pero nombra algunos como posibilidad: woff (WOFF Web Open Font Format, .woff), truetype (TrueType, .ttf), opentype (OpenType, .ttf, .otf), embedded-opentype (Embedded OpenType, .eot), svg (SVG Font, .svg, .svgz).
+            
+            Entre ellos, se recomienda utilizar el formato WOFF 2 (Web Open Font Format, .woff2), definido en la recomendación WOFF File Format 2.0 de marzo de 2018, o en su defecto, el formato WOFF (.woff) definido en la recomendación WOFF File Format 1.0 de diciembre de 2012.
+            
+            Nota: La regla-arroba @font-face estaba incluida en la recomendación CSS 2, pero no se incluyó en la recomendación CSS 2.1, por lo que en CSS 2 se consideraba obsoleta. Sin embargo, esta regla-arroba se recuperó en la recomendación CSS Fonts Module Level 3, publicado en septiembre de 2018.
+            
+            Google Fonts / Google Fonts API
+            Google ofrece un servicio de alojamiento de fuentes libres, Google Fonts.
+            
+            Google Fonts permite descargar las fuentes en formato TTF a nuestro ordenador para utilizarlas por ejemplo en un procesador de textos. Para ello, hay añadir las fuentes deseadas a una colección y descargar la colección completa.
+            
+            Lo más interesante de Google Fonts es que las fuentes pueden utilizarse en nuestras páginas web sin necesidad de alojarlas en nuestro propio servidor. Eso tiene la ventaja de que nos ahorramos el tráfico que genera la fuente, pero tiene el inconveniente de que en cualquier momento pueden no estar disponibles. Para intentar evitar este problema conviene indicar varias fuentes, poniendo en último lugar una de las familias genéricas.
+            
+            Si queremos alojar nosotros las fuentes, Google Fonts ofrece la posibilidad de descargarla en formato TTF, pero a continuación podemos o bien convertir la fuente TTF al formato woff mediante alguna de las páginas web citadas en el apartado Fuentes WOFF, o bien descargarla de Google Fonts utilizando el procedimiento comentado en el apartado Descargar las fuentes de Google Fonts en formato WOFF2.
+            
+            Las fuentes incluidas en Google Fonts también se encuentran disponibles como repositorio de GitHub: https://github.com/google/fonts/.
+            
+            Enlazar las fuentes de Google Fonts
+            Para utilizar Google Fonts, la documentación oficial propone dos métodos equivalentes, aunque yo recomiendo el primero ya que toda la información se encuentra en la hoja de estilo.
+            
+            Incluir al principio de la hoja de estilo una regla-arroba @import y la fuente se puede utilizar en la hoja de estilo como una familia más, como muestra el ejemplo siguiente:
+            @import url("https://fonts.googleapis.com/css?family=Mystery+Quest");
+            
+            p {
+                font-family: "Mystery Quest", cursive;
+                font-size: 150%;
+            }
+            
+            Enlace externo
+            Las reglas @import deben escribirse obligatoriamente al principio de la hoja de estilo, como se comenta en el apartado Posición de @import de esta lección.
+            
+            Incluir en el documento html un enlace como si fuera un enlace a una hoja de estilo y la fuente se puede utilizar en la hoja de estilo como una familia más, como muestra el ejemplo siguiente:
+            <head>
+             ...
+              <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mystery+Quest">
+             ...
+            </head>
+            p {
+                font-family: "Mystery Quest", cursive;
+                font-size: 150%;
+            }
+            
+            Enlace externo
+            Se muestra a continuación cómo encontrar en Google Fonts el código de los ejemplos anteriores:
+            
+            </p>
+        </table>    
+        
+            
+        
+            
+            
+
+            
+
+    </body>
+</html>
